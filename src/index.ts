@@ -29,5 +29,8 @@ export * from './lib/github/index.js';
 // Feature #8: Status Checks / Thresholds
 export * from './lib/checks/index.js';
 
+// Feature #9: Multi-page Configuration
+export * from './lib/config/index.js';
+
 // Version
 export const VERSION = '0.1.0';

@@ -31,6 +31,7 @@
     "@playwright/test": "^1.49.1",
     "dotenv": "^16.4.7",
     "playwright": "^1.49.1",
+    "yaml": "^2.8.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
