@@ -23,5 +23,8 @@ export * from './lib/dashboard/index.js';
 // Feature #6: GitHub Action
 export * from './lib/action/index.js';
 
+// Feature #7: PR Comments
+export * from './lib/github/index.js';
+
 // Version
 export const VERSION = '0.1.0';
