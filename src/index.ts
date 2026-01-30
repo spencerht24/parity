@@ -26,5 +26,8 @@ export * from './lib/action/index.js';
 // Feature #7: PR Comments
 export * from './lib/github/index.js';
 
+// Feature #8: Status Checks / Thresholds
+export * from './lib/checks/index.js';
+
 // Version
 export const VERSION = '0.1.0';
