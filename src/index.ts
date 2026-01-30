@@ -32,5 +32,8 @@ export * from './lib/checks/index.js';
 // Feature #9: Multi-page Configuration
 export * from './lib/config/index.js';
 
+// Feature #10: Baseline Management
+export * from './lib/baseline/index.js';
+
 // Version
 export const VERSION = '0.1.0';
