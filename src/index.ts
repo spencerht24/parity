@@ -11,5 +11,8 @@ export * from './lib/figma/index.js';
 // Feature #2: Screenshot capture
 export * from './lib/screenshot/index.js';
 
+// Feature #3: AI visual comparison
+export * from './lib/comparison/index.js';
+
 // Version
 export const VERSION = '0.1.0';
