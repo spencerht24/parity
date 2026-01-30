@@ -4,13 +4,40 @@
   "description": "AI-powered UX fidelity testing platform - Figma to live website comparison",
   "main": "dist/index.js",
   "type": "module",
+  "bin": {
+    "parity": "./dist/cli/index.js"
+  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "test": "vitest",
-    "lint": "eslint src --ext .ts,.tsx"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "figma:export": "tsx src/cli/figma-export.ts"
   },
-  "keywords": ["figma", "ux", "testing", "visual-regression", "playwright", "ai"],
+  "keywords": [
+    "figma",
+    "ux",
+    "testing",
+    "visual-regression",
+    "playwright",
+    "ai"
+  ],
   "author": "Spencer Touchberry",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.49.1",
+    "dotenv": "^16.4.7",
+    "playwright": "^1.49.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
 }
