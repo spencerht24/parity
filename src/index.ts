@@ -17,5 +17,8 @@ export * from './lib/comparison/index.js';
 // Feature #4: Diff report generation
 export * from './lib/report/index.js';
 
+// Feature #5: Dashboard server
+export * from './lib/dashboard/index.js';
+
 // Version
 export const VERSION = '0.1.0';
