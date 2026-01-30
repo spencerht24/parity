@@ -1,0 +1,41 @@
+# Parity Configuration
+# Copy this to .parity.yml in your project root
+
+figma:
+  file: "your-figma-file-key"  # Get from Figma URL
+  pages:
+    - name: "Homepage"
+      frame: "Desktop/Hero"
+      url: "/"
+    - name: "Pricing"
+      frame: "Desktop/Pricing"
+      url: "/pricing"
+    - name: "Dashboard"
+      frame: "Desktop/Dashboard"
+      url: "/app/dashboard"
+      # auth: true  # Coming soon: authenticated pages
+
+viewports:
+  - name: desktop
+    width: 1440
+    height: 900
+  - name: tablet
+    width: 768
+    height: 1024
+  - name: mobile
+    width: 375
+    height: 812
+
+thresholds:
+  visual_match: 0.85    # Minimum similarity score (0-1)
+  max_critical: 0       # Fail if any critical issues
+  max_high_severity: 0  # Fail if any high severity issues
+  max_medium_severity: 5 # Allow up to 5 medium issues
+  # low severity issues never fail
+
+checks:
+  visual: true           # Visual comparison (always on)
+  accessibility: true    # axe-core a11y checks
+  broken_links: true     # Check for broken links
+  js_errors: true        # Capture JS console errors
+  # performance: false   # Coming soon: Core Web Vitals

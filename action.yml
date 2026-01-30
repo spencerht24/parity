@@ -1,0 +1,51 @@
+name: 'Parity UX Fidelity Check'
+description: 'AI-powered visual comparison between Figma designs and live website'
+author: 'Spencer Touchberry'
+branding:
+  icon: 'check-circle'
+  color: 'purple'
+
+inputs:
+  figma-token:
+    description: 'Figma API token'
+    required: true
+  figma-file:
+    description: 'Figma file key (from URL)'
+    required: true
+  target-url:
+    description: 'Target URL to test'
+    required: true
+  config:
+    description: 'Path to .parity.yml config file'
+    required: false
+    default: '.parity.yml'
+  fail-on:
+    description: 'Severity level to fail on (critical, high, medium, low)'
+    required: false
+    default: 'high'
+  openai-api-key:
+    description: 'OpenAI API key for AI comparison'
+    required: false
+  anthropic-api-key:
+    description: 'Anthropic API key for AI comparison (alternative to OpenAI)'
+    required: false
+  model:
+    description: 'AI model to use (gpt-4o, gpt-4-vision, claude-sonnet, claude-opus)'
+    required: false
+    default: 'gpt-4o'
+
+outputs:
+  match-score:
+    description: 'Overall match score (0-100)'
+  passed:
+    description: 'Whether the check passed thresholds'
+  report-url:
+    description: 'URL to the generated report (if uploaded)'
+  report-path:
+    description: 'Local path to the generated report'
+  issues-count:
+    description: 'Total number of issues found'
+
+runs:
+  using: 'node20'
+  main: 'dist/action/index.js'

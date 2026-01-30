@@ -1,0 +1,60 @@
+# Example Parity GitHub Action Workflow
+# 
+# This workflow runs Parity UX fidelity checks on pull requests.
+# Copy this to your project's .github/workflows/ directory.
+
+name: UX Fidelity Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  parity:
+    name: Parity Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # If using a preview deployment (Vercel, Netlify, etc.)
+      # - name: Wait for deployment
+      #   uses: actions/github-script@v7
+      #   with:
+      #     script: |
+      #       // Wait for deployment to be ready
+
+      - name: Run Parity Check
+        uses: spencerht24/parity@v1
+        with:
+          figma-token: ${{ secrets.FIGMA_TOKEN }}
+          figma-file: ${{ vars.FIGMA_FILE_KEY }}
+          target-url: ${{ github.event_name == 'pull_request' && format('https://pr-{0}.preview.example.com', github.event.number) || 'https://example.com' }}
+          config: .parity.yml
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+        
+      - name: Upload Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: parity-report
+          path: .parity-reports/
+          retention-days: 30
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            // Read report and post comment
+            // Implementation depends on your needs

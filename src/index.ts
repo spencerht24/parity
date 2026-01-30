@@ -20,5 +20,8 @@ export * from './lib/report/index.js';
 // Feature #5: Dashboard server
 export * from './lib/dashboard/index.js';
 
+// Feature #6: GitHub Action
+export * from './lib/action/index.js';
+
 // Version
 export const VERSION = '0.1.0';
