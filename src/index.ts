@@ -14,5 +14,8 @@ export * from './lib/screenshot/index.js';
 // Feature #3: AI visual comparison
 export * from './lib/comparison/index.js';
 
+// Feature #4: Diff report generation
+export * from './lib/report/index.js';
+
 // Version
 export const VERSION = '0.1.0';
