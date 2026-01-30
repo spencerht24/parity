@@ -1,0 +1,16 @@
+{
+  "name": "parity",
+  "version": "0.1.0",
+  "description": "AI-powered UX fidelity testing platform - Figma to live website comparison",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "keywords": ["figma", "ux", "testing", "visual-regression", "playwright", "ai"],
+  "author": "Spencer Touchberry",
+  "license": "MIT"
+}
