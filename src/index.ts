@@ -35,5 +35,8 @@ export * from './lib/config/index.js';
 // Feature #10: Baseline Management
 export * from './lib/baseline/index.js';
 
+// Feature #11: Accessibility Checks
+export * from './lib/a11y/index.js';
+
 // Version
 export const VERSION = '0.1.0';
