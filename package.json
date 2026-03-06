@@ -15,7 +15,8 @@
     "lint": "eslint src --ext .ts,.tsx",
     "figma:export": "tsx src/cli/figma-export.ts",
     "screenshot": "tsx src/cli/screenshot.ts",
-    "dashboard": "tsx src/cli/dashboard.ts"
+    "dashboard": "tsx src/cli/dashboard.ts",
+    "functional": "tsx src/cli/functional-check.ts"
   },
   "keywords": [
     "figma",
