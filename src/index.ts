@@ -38,5 +38,8 @@ export * from './lib/baseline/index.js';
 // Feature #11: Accessibility Checks
 export * from './lib/a11y/index.js';
 
+// Phase 3: Functional Testing (broken links, console errors, performance metrics)
+export * from './lib/functional/index.js';
+
 // Version
 export const VERSION = '0.1.0';
